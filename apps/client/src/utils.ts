@@ -22,3 +22,9 @@ export const ampsQueryWorkerInstance = new ComlinkWorker<typeof import("./sw/amp
         type: "module"
     }
 );
+
+export const getAmpsQueryWorkerInstance = ()=>new ComlinkWorker<typeof import("./sw/amps-query")>(
+    new URL("./sw/amps-query", import.meta.url),{
+        type: "module"
+    }
+);

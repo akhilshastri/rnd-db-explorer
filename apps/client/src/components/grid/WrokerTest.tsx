@@ -5,7 +5,7 @@ import "ag-grid-community/styles/ag-theme-alpine.css";
 
 import "./grid-theme.css";
 import {Button} from "@mantine/core";
-import {ampsQueryWorkerInstance, workerInstance} from "@/utils.ts";
+import {ampsQueryWorkerInstance} from "@/utils.ts";
 import {proxy} from "comlink";
 
 
