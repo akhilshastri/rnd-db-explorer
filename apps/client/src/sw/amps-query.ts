@@ -133,6 +133,17 @@ export const query = async ({ query, onData, onError }: QueryParams) => {
           onData({ p: message.data, rowIndex: data.length });
         }
       }
+      else if (header === 'oof') {
+        // deleting the message
+        rowId = sowKeyMap[message.header.sowKey()];
+
+        if (rowId) {
+          var index = indexByRowId(rowId);
+          delete sowKeyMap[message.header.sowKey()];
+          data.splice(index, 1);
+          self.postMessage({oof: message.data, rowIndex: index});
+        }
+      }
     });
   } catch (e: any) {
     onError(e);
